@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:id="@+id/swipeLayout"
+    android:orientation="vertical"
+    tools:context=".modules.OverviewNewsActivity">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/detailNews"
+            android:src="@drawable/ic_baseline_double_arrow_24"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"/>
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold"
+                android:text="FOR NEWS IN DETAIL"/>
+            <Switch
+                android:id="@+id/mode"
+                android:layout_margin="20dp"
+                android:text="DARK MODE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/heading"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="NEWS IN SHORT TIME"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed-medium"
+            />
+    </androidx.cardview.widget.CardView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+     <ProgressBar
+         android:id="@+id/loadingBar"
+         android:layout_gravity="center_vertical|center_horizontal"
+         android:layout_width="60dp"
+         android:layout_height="60dp"
+         android:visibility="visible"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainPage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </FrameLayout>
+
+</LinearLayout>

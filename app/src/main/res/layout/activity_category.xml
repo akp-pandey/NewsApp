@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".modules.CategoryActivity">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/catgory"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="NEWS CATEGORY"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:onClick="callTechnology"
+            android:id="@+id/category1"
+
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/technology"/>
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TECHNOLOGY"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <View
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/category2"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+
+            app:cardElevation="10dp"
+            android:onClick="callEntertainment"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/entertainment"/>
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ENTERTAINMENT"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <View
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/category3"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+
+            android:onClick="callSports"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/sports"/>
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SPORTS"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <View
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/category4"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+
+            android:onClick="callBusiness"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"   >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/business"/>
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BUSINESS"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <View
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/category5"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            android:onClick="callScience"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/science"/>
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SCIENCE"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <View
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/category6"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+
+            app:cardElevation="10dp"
+            android:onClick="callHealth"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/health"/>
+
+            </FrameLayout>
+
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HEALTH"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <View
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+
+
+</LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>

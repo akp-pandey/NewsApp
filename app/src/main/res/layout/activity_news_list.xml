@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="article"
+            type="com.example.news.response.Article" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F2F2F2"
+    tools:context=".modules.DetailNewsActivity">
+
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+
+        imageUrl="@{article.urlToImage}"
+        android:id="@+id/image"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+    </androidx.cardview.widget.CardView>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_margin="20dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:layout_margin="5dp"
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="THIS IS TITLE OF NIEWS"
+                android:textSize="25dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@{article.title}"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+            </androidx.cardview.widget.CardView>
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_margin="20dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:layout_margin="25dp"
+                android:id="@+id/description"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{article.description}"
+                android:textSize="18dp"
+                android:textColorHighlight="@color/black"
+                android:fontFamily="sans-serif-thin"
+                tools:text="THIS IS DESCRIPTION OF NEWS"/>
+            </androidx.cardview.widget.CardView>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <WebView
+                android:layout_margin="25dp"
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+</layout>
