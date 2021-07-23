@@ -26,6 +26,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class TopHeadlineActivity : AppCompatActivity() {
+
     var mComositeDisposable: CompositeDisposable? = null
     lateinit var url: String
     lateinit var dialog: Dialog
@@ -36,9 +37,13 @@ class TopHeadlineActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Setting up dialog for no internet connection
         dialog = Dialog(this)
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.nointernet_connection)
+
+        //Observing the Live Data of InteretConnection
         connectivityLiveData = ConnectivityLiveData(this)
         connectivityLiveData.observe(this, androidx.lifecycle.Observer { isAvailable ->
             if (isAvailable) {
@@ -51,13 +56,19 @@ class TopHeadlineActivity : AppCompatActivity() {
     }
 
     private fun setUp() {
+
+        //Calendar for date
         val calendar=Calendar.getInstance()
         val date=calendar.get(Calendar.DAY_OF_MONTH).toString()+"-"+calendar.get(Calendar.MONTH)+"-"+calendar.get(Calendar.YEAR)
+
+        //Getting id of views
         var recyclerView:RecyclerView=findViewById(R.id.rvNewsTitle)
         var progressBar:ProgressBar=findViewById(R.id.progressBar)
         var dates:TextView=findViewById(R.id.date)
         var heading:TextView=findViewById(R.id.heading)
         var intent=intent.getIntExtra("value",0)
+
+        //Changing url based on the intent
         if(intent.equals(1)) {
             url =
                     "http://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=cc5007ba7b6d40b4ae6ae09cd6acaba7"
@@ -88,17 +99,21 @@ class TopHeadlineActivity : AppCompatActivity() {
             heading.setText("TOP HEADLINES")
         }
         val category:LinearLayout=findViewById(R.id.layoutCat)
+
+        //Setting clickListener on Category icon
         category.setOnClickListener {
             val intent=Intent(this, CategoryActivity::class.java)
             startActivity(intent)
 
         }
+
         dates.setText(date)
 
         recyclerView.addItemDecoration(DividerItemDecoration(this,LinearLayoutManager.VERTICAL))
         val Adapter = TitleAdapter({ item ->
         }, this, url)
 
+        //Calling the api using compositedisposabl
         mComositeDisposable = CompositeDisposable()
         mComositeDisposable!!.add(ApiCallFactory.create().getNews(url)
                 .subscribeOn(Schedulers.io())

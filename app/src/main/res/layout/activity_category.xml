@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+    android:backgroundTint="@color/white"
     tools:context=".modules.CategoryActivity">
     <androidx.cardview.widget.CardView
         android:id="@+id/catgory"
         android:layout_margin="10dp"
         app:cardElevation="10dp"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -26,16 +27,18 @@
     </androidx.cardview.widget.CardView>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:backgroundTint="@color/white"
         android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:onClick="callTechnology"
             android:id="@+id/category1"
-
+            android:backgroundTint="@color/white"
             android:layout_width="match_parent"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
@@ -60,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="TECHNOLOGY"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
         <View
@@ -74,7 +77,7 @@
             android:id="@+id/category2"
             android:layout_width="match_parent"
             app:cardCornerRadius="10dp"
-
+            android:backgroundTint="@color/white"
             app:cardElevation="10dp"
             android:onClick="callEntertainment"
             android:layout_height="200dp"
@@ -98,7 +101,7 @@
             android:layout_height="wrap_content"
             android:text="ENTERTAINMENT"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
         <View
@@ -115,7 +118,7 @@
             android:layout_width="match_parent"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
-
+            android:backgroundTint="@color/white"
             android:onClick="callSports"
             android:layout_height="200dp"
             android:layout_margin="20dp"
@@ -138,7 +141,7 @@
             android:layout_height="wrap_content"
             android:text="SPORTS"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
         <View
@@ -152,7 +155,7 @@
             android:layout_width="match_parent"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
-
+            android:backgroundTint="@color/white"
             android:onClick="callBusiness"
             android:layout_height="200dp"
             android:layout_margin="20dp"   >
@@ -174,7 +177,7 @@
             android:layout_height="wrap_content"
             android:text="BUSINESS"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
         <View
@@ -191,6 +194,7 @@
             android:layout_width="match_parent"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp"
+            android:backgroundTint="@color/white"
             android:onClick="callScience"
             android:layout_height="200dp"
             android:layout_margin="20dp"
@@ -213,7 +217,7 @@
             android:layout_height="wrap_content"
             android:text="SCIENCE"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
         <View
@@ -226,7 +230,7 @@
             android:id="@+id/category6"
             android:layout_width="match_parent"
             app:cardCornerRadius="10dp"
-
+            android:backgroundTint="@color/white"
             app:cardElevation="10dp"
             android:onClick="callHealth"
             android:layout_height="200dp"
@@ -250,7 +254,7 @@
             android:layout_height="wrap_content"
             android:text="HEALTH"
             android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
         <View

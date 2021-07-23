@@ -14,19 +14,6 @@ import androidx.lifecycle.LiveData
 
 class ConnectivityLiveData(val context: Context):LiveData<Boolean>() {
     private var connectivityManager:ConnectivityManager=context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    private var connectivityCallBack= @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    object : ConnectivityManager.NetworkCallback() {
-        override fun onAvailable(network: Network) {
-            super.onAvailable(network)
-            postValue(true)
-
-        }
-
-        override fun onLost(network: Network) {
-            super.onLost(network)
-            postValue(false)
-        }
-    }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onActive() {

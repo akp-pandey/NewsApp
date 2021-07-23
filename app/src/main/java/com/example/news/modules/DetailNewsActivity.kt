@@ -22,7 +22,10 @@ class DetailNewsActivity : AppCompatActivity() {
     lateinit var newsListBinding: ActivityNewsListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         newsListBinding = DataBindingUtil.setContentView(this, R.layout.activity_news_list)
+
+        //creating dialog for no internet connection
         dialog = Dialog(this)
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.nointernet_connection)
@@ -37,6 +40,7 @@ class DetailNewsActivity : AppCompatActivity() {
         })
     }
     private fun setUp() {
+
         newsListBinding.webView.webViewClient= WebViewClient()
         mComositeDisposable=CompositeDisposable()
         var url: String =intent.getStringExtra("url")!!

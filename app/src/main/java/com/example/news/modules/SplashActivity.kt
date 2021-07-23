@@ -9,20 +9,18 @@ import androidx.annotation.RequiresApi
 import com.example.news.R
 
 open class SplashActivity : AppCompatActivity() {
+
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        Handler().postDelayed(
-            {
-
-                    val i=Intent(this, OverviewNewsActivity::class.java)
+        //Providing delay for splash activity
+        Handler().postDelayed({
+            val i=Intent(this, OverviewNewsActivity::class.java)
                     startActivity(i)
-                    finish()
-
-            },1000
+                    finish() },1000
         )
     }
 

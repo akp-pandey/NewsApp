@@ -23,16 +23,21 @@ import io.reactivex.schedulers.Schedulers
 
 
 class OverviewNewsActivity : AppCompatActivity() {
+
+    //Variable declared
     lateinit var connectivityLiveData: ConnectivityLiveData
     lateinit var compositeDisposable: CompositeDisposable
-    lateinit var snackbar: Snackbar
     var arryList=ArrayList<Article>()
     private lateinit var dialog:Dialog
-    @SuppressLint("ClickableViewAccessibility")
+
+    @SuppressLint("ClickableViewAccessibility", "UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_flipper_screen)
+
         val switch:Switch=findViewById(R.id.mode)
+
+        //For night and Day Mode
         switch.setOnCheckedChangeListener { buttonView, isChecked ->
             if (switch.isChecked)
             {
@@ -44,46 +49,42 @@ class OverviewNewsActivity : AppCompatActivity() {
                 switch.text="DARK MODE"
             }
         }
+
+        //Creating dialog for no internet connection
         dialog= Dialog(this)
         dialog.setCancelable(false)
         dialog.setContentView(R.layout.nointernet_connection)
         connectivityLiveData= ConnectivityLiveData(this)
-        Log.e("HOW MANY TIMES","ONE TIME")
+
         connectivityLiveData.observe(this, Observer { isAvailable->
-            if (isAvailable)
-            {
-                Log.e("BOOLEAN",isAvailable.toString())
+            if (isAvailable) {
                 dialog.dismiss()
                 setUp()
             }
-            else
-            {
-                Log.e("BOOLEAN",isAvailable.toString())
+            else {
                 dialog.show()
             }
-
         })
 
 
     }
-
     private fun setUp() {
+
         val imageDetail:ImageView=findViewById(R.id.detailNews)
         imageDetail.setOnClickListener {
             val intent=Intent(this, TopHeadlineActivity::class.java)
             startActivity(intent)
         }
         var loadingBar:ProgressBar=findViewById(R.id.loadingBar)
-        val articleList=intent.getStringArrayListExtra("article")
-        Log.e("PRINT",articleList.toString())
         var recyclerView:RecyclerView=findViewById(R.id.mainPage)
+
         val adapter= MainPageAdapter { mainpage ->
 
         }
-        compositeDisposable= CompositeDisposable()
-        compositeDisposable.add(
 
-                ApiCallFactory.create().getNews("v2/top-headlines?country=in&apiKey=cc5007ba7b6d40b4ae6ae09cd6acaba7")
+        //ApiCall
+        compositeDisposable= CompositeDisposable()
+        compositeDisposable.add(ApiCallFactory.create().getNews("v2/top-headlines?country=in&apiKey=cc5007ba7b6d40b4ae6ae09cd6acaba7")
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe({response->

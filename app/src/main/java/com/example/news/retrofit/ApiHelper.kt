@@ -8,7 +8,10 @@ import retrofit2.http.POST
 import retrofit2.http.Url
 import java.util.*
 
+
 interface ApiHelper {
+
+    //Calling the API using retrofit
     @GET
     fun getNews(@Url url: String):Observable<News<Article>>
 
